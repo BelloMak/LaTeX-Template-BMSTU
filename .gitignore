@@ -13,4 +13,5 @@
 miktex
 .pdf-view-restore
 .vscode
+!my_latex_class/bmstu-logo.pdf
 !documentation/my-latex-class.pdf
