@@ -1,0 +1,45 @@
+% Сплошная нумерация рисунков и таблиц
+\RequirePackage{chngcntr}
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+
+% Подключения пакетов фигур
+\RequirePackage{graphicx}
+\RequirePackage{float}
+\RequirePackage{wrapfig}
+
+% Подключение пакетов таблиц
+\RequirePackage{tabularx}
+\RequirePackage{booktabs}
+\RequirePackage{longtable}
+
+% Настройка подписей
+\RequirePackage[
+	labelsep=endash,
+	figurename=Рисунок,
+	singlelinecheck=false
+]{caption}
+\captionsetup[figure]{justification=centering}
+\captionsetup[table]{justification=raggedright}
+
+% Удобная команда для вставки картинок. Пример использования: 
+% \img{fig:ReachedGoal}{ReachedGoal.png}{Результат работы алгоритма}{0.9}
+\newcommand{\img}[5][htb]{
+  	\begin{figure}[#1]
+    		\centering
+    		\includegraphics[width = #5\textwidth]{#3}
+   	 	\caption{#4}
+	 	\label{#2}
+  	\end{figure}
+}
+
+% Вставка повернутых картинок
+\RequirePackage{rotating}
+\newcommand{\rotateimg}[5][htb]{
+  	\begin{sidewaysfigure}[#1]
+    		\centering
+    		\includegraphics[width = #5\textheight]{#3}
+   	 	\caption{#4}
+	 	\label{#2}
+  	\end{sidewaysfigure}
+}

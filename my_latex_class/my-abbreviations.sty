@@ -1,0 +1,31 @@
+\RequirePackage{acro}
+
+% Для настройки расстояния между сокращениями
+\RequirePackage{enumitem}
+
+% Команда \input{./path/to/abbreviations.tex} должна находится до команды 
+% \begin{document}
+
+% Команда для добавления сокращения. Пример использования:
+% \abbr{ТС}{Транспортное средство}
+\newcommand{\abbr}[2]{
+	\DeclareAcronym{#1}{
+    	short={#1},
+    	long={--- #2},
+    }
+}
+
+% Команда для вставки списка сокращений. По умолчанию выводится сортированный
+% список сокращений. Если необходимо вывести список в порядке указания в файле,
+% то необходимо вызвать команду \printabbr[false]
+\newcommand{\printabbr}[1][true]{
+	{\setlist{itemsep=0pt,parsep=12pt}
+	\printacronyms[
+		template=description,
+        display=all,
+        sort=#1,
+        name={Обозначения и сокращения},
+	    preamble={В	настоящем отчете применяются следующие обозначения и сокращения.},
+    ]}
+	\addcontentsline{toc}{chapter}{Обозначения и сокращения}
+}

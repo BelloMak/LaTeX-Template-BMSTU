@@ -1,0 +1,44 @@
+\providecommand\classopts{}
+\expandafter\documentclass\expandafter[\classopts]{./my_latex_class/my-latex-class}
+
+% Библиография
+\bibliography{BibDB}
+% Директория с изображениями, может быть сетевым расположением
+\graphicspath{{./images/}{./my_latex_class/}}
+
+% Файл с определением сокращений
+\input{sourcefiles/001-abbreviations.tex}
+
+\begin{document}
+
+% Титульная страница
+\include{sourcefiles/000-titlepage.tex}
+
+% Аннотация
+\include{sourcefiles/002-annotation.tex}
+
+% Сортированный список сокращений
+\printabbr
+
+% Содержание
+\maketableofcontents
+
+% Введение
+\include{sourcefiles/010-introduction.tex}
+
+% Уровни заголовков
+\include{sourcefiles/015-main_info.tex}
+
+% Описание команд
+\include{sourcefiles/020-commands_description.tex}
+
+% Заключение
+\include{sourcefiles/090-conclusion.tex}
+
+% Список литературы
+\makebibliography	
+
+% Приложение
+\include{sourcefiles/100-appendices.tex}
+
+\end{document}

@@ -1,0 +1,65 @@
+\chapter{Общая информация}
+
+Для класса определены четыре значения состояния компиляции:
+\begin{itemize}
+    \item \lstinline:final: --- финальная версия документа;
+    \item \lstinline:monochrome: --- финальная версия документа с ЧБ текстом;
+    \item \lstinline:build: --- промежуточная версия документа;
+    \item \lstinline:draft: --- черновая версия документа.
+\end{itemize}
+
+При значениях \lstinline:build: и \lstinline:draft: на каждом листе выводится водяной знак
+<<Черновик>>. Если параметр опущен (т.е. ничего не указано, как в случае
+компиляции через MiKTeX), то он приравнивается к \lstinline:final:.
+
+В классе определены следующие размеры шрифтов:
+\begin{itemize}
+    \item \lstinline:\LARGE: --- 22 pt;
+    \item \lstinline:\Large: --- 20 pt;
+    \item \lstinline:\large: --- 16 pt;
+    \item \lstinline:\normalsize: --- 14 pt;
+    \item \lstinline:\small: --- 12 pt;
+    \item \lstinline:\footnotesize: --- 10 pt.
+\end{itemize}
+
+Для деления документа на части можно использовать следующие команды (перечислены
+в порядке увеличения уровня вложенности):
+
+\begin{itemize}
+    \item \lstinline:\chapter{Название}: --- основные части, большие структурные единицы
+    (уровень \textbf{Введение} и т.д.);
+    \item \lstinline:\section{Название}: --- 2 уровень вложенности;
+    \item \lstinline:\subsection{Название}: --- 3 уровень вложенности;
+    \item \lstinline:\subsubsection{Название}: --- 4 уровень вложенности, не добавляется в
+    содержание, не рекомендуется к использованию.
+\end{itemize}
+
+Большие структурные единицы, написанные в отдельном файле, рекомендуется
+добавлять с помощью команды \lstinline:\include{./path/to/file}:, а более мелкие ---
+с помощью команды \lstinline:\input{./path/to/file}:. 
+
+Класс создан под компилятор \lstinline:xelatex: и \lstinline:biber: и работает
+как на дистрибутивах TeX Live, так и на дистрибутиве MiKTeX. Список всех
+подключенных пакетов можно найти в приложении~\ref{appendix:packages}.
+
+Структура директории класса имеет следующий вид:
+\vspace{0.5cm}
+\begin{small}
+\dirtree{%
+.1 my\_latex\_class.
+.2 bmstu-logo.pdf\DTcomment{Герб МГТУ}.
+.2 my-abbreviations.sty\DTcomment{Сокращения}.
+.2 my-appendix.sty\DTcomment{Приложения}.
+.2 my-bibliography.sty\DTcomment{Литература}.
+.2 my-bmstu-titlepage.sty\DTcomment{Титульный лист}.
+.2 my-essay.sty\DTcomment{Реферат}.
+.2 my-figures-tables.sty\DTcomment{Рисунки и таблицы}.
+.2 my-listing.sty\DTcomment{Листинги}.
+.2 my-toc.sty\DTcomment{Содержание}.
+.2 my-latex-class.cls\DTcomment{Основные настройки}.
+}
+\end{small}
+\vspace{0.5cm}
+
+При необходимости настройки отдельных элементов класса можно изменить в
+соответствующем файле.

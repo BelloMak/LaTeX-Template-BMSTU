@@ -1,0 +1,75 @@
+% Подсчет количества страниц
+\RequirePackage{lastpage}
+
+% Подсчет количества рисунков и таблиц
+\RequirePackage{etoolbox}
+\newcounter{totfigures}
+\newcounter{tottables}
+\newcounter{totlistings}
+
+\providecommand\totfigbib{}
+\providecommand\tottabbib{}
+\providecommand\totlistbib{}
+\makeatletter
+\AtEndDocument{%
+	\immediate\write\@mainaux{%
+		\string\gdef\string\totfigbib{\number\value{totfigures}}%
+		\string\gdef\string\tottabbib{\number\value{tottables}}%
+		\string\gdef\string\totlistbib{\number\value{lstlistingbib}}%
+	}%
+}
+\makeatother
+
+\pretocmd{\chapter}{\addtocounter{totfigures}{\value{figure}}\setcounter{figure}{0}}{}{}
+\pretocmd{\chapter}{\addtocounter{tottables}{\value{table}}\setcounter{table}{0}}{}{}
+
+% Подсчет количества использованных источников
+\newcounter{totbibentries}
+\newcommand*{\listcounted}{}
+\providecommand\totbib{}
+\makeatletter
+\AtDataInput{%
+	\xifinlist{\abx@field@entrykey}\listcounted%
+	{}%
+	{\stepcounter{totbibentries}%
+		\listxadd\listcounted{\abx@field@entrykey}}%
+}%
+\makeatother
+
+% Подсчет количества приложений
+\RequirePackage{totcount}
+\RequirePackage{assoccnt}
+\newcounter{appendixchapters}
+\DeclareAssociatedCounters{chapter}{appendixchapters}
+\regtotcounter{appendixchapters}
+% Вставить число приложений можно так:
+% \total{appendixchapters}
+
+% Сравнение счетроки с нулем
+\newcommand{\checkcounter}[2]{
+	\ifthenelse{\equal{#1}{\string 0}}{}{, #1~#2}
+}
+
+% Создание страницы реферата без приложений
+\newenvironment{essay}
+{
+	\chapter*{Реферат}
+	\addcontentsline{toc}{chapter}{Реферат}
+	
+	% Строчка ниже будет напечатана сразу после команды \begin{essay}
+	Отчет \begin{NoHyper}\pageref{LastMainPage}\end{NoHyper}~с.
+	{\kern-1ex}\checkcounter{\totfigbib}{рис.}{\kern-1ex}\checkcounter{\tottabbib}{табл.}{\kern-1ex}\checkcounter{\totlistbib}{лист.}{\kern-1ex}\checkcounter{\thetotbibentries}{источн.}
+	\par
+}{}
+
+% Создание страницы реферата с приложениями
+\newenvironment{essaywithapp}
+{
+	\chapter*{Реферат}
+	\addcontentsline{toc}{chapter}{Реферат}
+	
+	% Строчка ниже будет напечатана сразу после команды \begin{essay}
+	Отчет \begin{NoHyper}\pageref{LastMainPage}\end{NoHyper}~с.
+	{\kern-1ex}\checkcounter{\totfigbib}{рис.}{\kern-1ex}\checkcounter{\tottabbib}{табл.}{\kern-1ex}\checkcounter{\totlistbib}{лист.}{\kern-1ex}\checkcounter{\thetotbibentries}{источн.}{\kern-3pt}, \total{appendixchapters}~прил.
+	\par
+}{}

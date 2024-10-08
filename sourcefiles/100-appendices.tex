@@ -1,0 +1,186 @@
+\begin{appendices}
+
+\chapter{Титульные листы}
+
+\label{appendix:titlepage}
+
+\begin{lstlisting}[language=TeX,
+        caption=Код для создания титульного листа НИР,
+        label=code:titlepage_makeresearchtitle]
+\makeresearchtitle
+    {Специальное машиностроение} % Название факультета
+    {Робототехнические системы и мехатроника} % Название кафедры
+    {Создание \LaTeX{} класса для написания документов} % Тема работы
+    {М.А. Козлов/СМ7-23М} % ФИО студента/группа
+    {В.В. Зеленцов} % ФИО научного руководителя
+    {} % ФИО консультанта (если есть)
+\end{lstlisting}
+
+\begin{lstlisting}[language=TeX,
+    caption=Код для создания титульного листа КР,
+    label=code:titlepage_makecourseworktitle]
+\makecourseworktitle
+    {Специальное машиностроение} % Название факультета
+    {Робототехнические системы и мехатроника} % Название кафедры
+    {Создание \LaTeX{} класса для написания документов} % Тема работы
+    {М.А. Козлов/СМ7-23М} % ФИО студента/группа
+    {В.В. Зеленцов} % ФИО научного руководителя
+    {} % ФИО консультанта (если есть)
+
+\end{lstlisting}
+
+\begin{lstlisting}[language=TeX,
+    caption=Код для создания титульного листа КП,
+    label=code:titlepage_makecourseprojecttitle]
+\makecourseprojecttitle
+    {Специальное машиностроение} % Название факультета
+    {Робототехнические системы и мехатроника} % Название кафедры
+    {Создание \LaTeX{} класса для написания документов} % Тема работы
+    {М.А. Козлов/СМ7-23М} % ФИО студента/группа
+    {В.В. Зеленцов} % ФИО научного руководителя
+    {} % ФИО консультанта (если есть)
+\end{lstlisting}
+
+\newpage
+
+\begin{lstlisting}[language=TeX,
+    caption=Код для создания титульного листа ВКР,
+    label=code:titlepage_makethesistitle]
+\makethesistitle
+    {Специальное машиностроение} % Название факультета
+    {Робототехнические системы и мехатроника} % Название кафедры
+    {Создание \LaTeX{} класса для написания документов} % Тема работы
+    {М.А. Козлов/СМ7-23М} % ФИО студента/группа
+    {В.В. Зеленцов} % ФИО научного руководителя
+    {} % ФИО консультанта (если есть)
+    {В.А. Панков} % ФИО нормоконтролера
+\end{lstlisting}
+
+\chapter{Примеры написания таблиц}
+\label{appendix:tables}
+
+\begin{lstlisting}[language=TeX,
+    caption=Исходный код таблицы \ref{table:KAMAZ_5350_params},
+    label=code:table1]
+\begin{table}[h]
+    \centering
+    \caption{Параметры автомобиля КАМАЗ~5350}
+    \label{table:KAMAZ_5350_params}
+    \begin{tabular}{|p{8cm}|p{8cm}|}                \hline 
+        \textbf{Параметр}   & \textbf{Значение}     \\\hline
+        Колесная формула    & 6x6                   \\\hline
+        Полная масса        & 15 850 кг             \\\hline
+        Снаряженная масса   & 9 650 кг              \\\hline
+        Двигатель           & КамАЗ-740.30-260,V8   \\\hline
+    \end{tabular}
+\end{table}
+\end{lstlisting}
+
+\begin{lstlisting}[language=TeX,
+    caption=Исходный код таблицы \ref{table:booktabs},
+    label=code:table2]
+\begin{table}[htb]
+    \caption{Пример создания таблицы при помощи пакета booktabs}
+    \label{table:booktabs}
+    \begin{tabular}{@{}llr@{}} \toprule
+        \multicolumn{2}{c}{Item} \\ \cmidrule(r){1-2}
+        Animal      & Description   & Price (\$)  \\\midrule
+        Gnat        & per gram      & 13.65       \\
+                    & each          & 0.01        \\
+        Gnu         & stuffed       & 92.50       \\
+        Emu         & stuffed       & 33.33       \\
+        Armadillo   & frozen        & 8.99        \\\bottomrule
+    \end{tabular}
+\end{table}
+\end{lstlisting}
+
+\newpage
+
+\begin{lstlisting}[language=TeX,
+    caption=Исходный код таблицы \ref{table:longtable},
+    label=code:table3]
+\begin{longtable}{|p{3cm}|p{7cm}|p{5cm}|}
+    % Настройки подписи первой страницы
+    \caption{Пример создания таблицы при помощи пакета longtable} 
+    \label{table:longtable} \\
+    \hline 
+    First column & Second column & Third column \\\hline 
+    \endfirsthead
+    % Подписи на следующих страницах
+    \caption*{Продолжение таблицы \ref{table:longtable}} \\
+    \hline
+    First column & Second column & Third column \\\hline
+    \endhead
+
+    % Настройки нижних частей таблицы
+    \hline
+    \endfoot
+    \hline
+    \endlastfoot 
+
+    % Сама таблица
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+                  ---//---
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    \hline
+\end{longtable}
+\end{lstlisting}
+
+\chapter{Подключаемые пакеты}
+\label{appendix:packages}
+\begin{multicols}{3}
+
+    \noindent
+    acro\\
+    afterpage\\
+    amsmath\\
+    amssymb\\
+    assoccnt\\
+    babel\\
+    biblatex\\
+    booktabs\\
+    chngcntr\\
+    comment\\
+    csquotes\\
+    dirtree\\
+    draftwatermark\\
+    enumitem\\
+    etoolbox\\
+    fancybox\\
+    fancyhdr\\
+    fix-cm\\
+    float\\
+    fontenc\\
+    fontspec\\
+    geometry\\
+    graphicx\\
+    hyperref\\
+    indentfirst\\
+    inputenc\\
+    lastpage\\
+    listings\\
+    listingsutf8\\
+    longtable\\
+    lscape\\
+    microtype\\
+    multicol\\
+    normalem\\
+    pdfpages\\
+    pgffor\\
+    rotating\\
+    setspace\\
+    stackengine\\
+    tabularx\\
+    texlogsieve\\
+    titlesec\\
+    tocloft\\
+    totcount\\
+    url\\
+    wrapfig\\
+    xcolor\\
+    xifthen
+
+\end{multicols}
+\end{appendices}

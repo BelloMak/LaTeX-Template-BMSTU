@@ -1,0 +1,16 @@
+*.pdf
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.xdv
+*.bbl
+*.blg
+*.fls
+*.bcf
+*.run.xml
+*.toc
+miktex
+.pdf-view-restore
+.vscode
+!documentation/my-latex-class.pdf

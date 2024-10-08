@@ -1,0 +1,132 @@
+\section{Таблицы}
+
+В настоящем параграфе приведены примеры компиляции таблиц, исходный код которых
+приведен в приложении~\ref{appendix:tables}. Специальных команд для
+этого не предусмотрено, но предлагается ориентироваться на примеры, приведенные
+ниже.
+
+В классе подключены три пакета для работы с таблицами:
+\begin{itemize}
+    \item \lstinline$tabularx$ --- наиболее часто используемый пакет, скорее
+    всего другими пользоваться не придется;
+    \item \lstinline$booktabs$ --- для создания более сложных таблиц;
+    \item \lstinline$longtable$ --- для таблиц, не помещающихся на одной
+    странице. 
+\end{itemize}
+
+В таблице~\ref{table:KAMAZ_5350_params} представлены параметры автомобиля
+КАМАЗ~5350. У этой таблицы явно заданы размеры колонок. 
+
+\begin{table}[h]
+    \centering
+    \caption{Параметры автомобиля КАМАЗ~5350}
+ 	\label{table:KAMAZ_5350_params}
+    \begin{tabular}{|p{8cm}|p{8cm}|}                \hline 
+		\textbf{Параметр}   & \textbf{Значение}     \\\hline
+		Колесная формула    & 6x6                   \\\hline
+		Полная масса        & 15 850 кг             \\\hline
+		Снаряженная масса   & 9 650 кг              \\\hline
+		Двигатель           & КамАЗ-740.30-260,V8   \\\hline
+	\end{tabular}
+\end{table}
+
+Таблица~\ref{table:booktabs} является примером из документации пакета
+\lstinline:booktabs: и представлена здесь для демонстрации его возможностей.
+
+\begin{table}[htb]
+	\caption{Пример создания таблицы при помощи пакета booktabs}
+    \label{table:booktabs}
+    \begin{tabular}{@{}llr@{}} \toprule
+        \multicolumn{2}{c}{Item} \\ \cmidrule(r){1-2}
+        Animal      & Description   & Price (\$)    \\ \midrule
+        Gnat        & per gram      & 13.65         \\
+                    & each          & 0.01          \\
+        Gnu         & stuffed       & 92.50         \\
+        Emu         & stuffed       & 33.33         \\
+        Armadillo   & frozen        & 8.99          \\ \bottomrule
+    \end{tabular}
+\end{table}
+
+А таблица~\ref{table:longtable} является примером создания многострочной таблицы
+при помощи пакета \lstinline:longtable:.
+	
+\begin{longtable}{|p{3cm}|p{7cm}|p{5cm}|}
+    % Настройки подписи первой страницы
+    \caption{Пример создания таблицы при помощи пакета longtable} 
+    \label{table:longtable} \\
+    \hline 
+    First column & Second column & Third column \\\hline 
+    \endfirsthead
+    % Подписи на следующих страницах
+    \caption*{Продолжение таблицы \ref{table:longtable}} \\
+    \hline
+    First column & Second column & Third column \\\hline
+    \endhead
+
+    % Настройки нижних частей таблицы
+    \hline
+    \endfoot
+    \hline
+    \endlastfoot 
+
+    % Сама таблица
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    One & abcdef ghjijklmn & 123.456778 \\
+    \hline
+\end{longtable}

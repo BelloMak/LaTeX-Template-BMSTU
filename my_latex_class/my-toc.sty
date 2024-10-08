@@ -1,0 +1,33 @@
+\RequirePackage{etoolbox}
+
+% Центрирование заголовка содержания
+\patchcmd{\tableofcontents}
+  {\contentsname}
+  {\hfill{\contentsname}\hfill\null}
+  {}
+  {}
+
+% Отступы между элементами содержания
+\RequirePackage[titles]{tocloft}
+\setlength\cftparskip{0pt}
+\setlength\cftbeforechapskip{0pt} 
+
+% Отступы в содержании
+\cftsetindents{section}{0em}{2em}
+\cftsetindents{subsection}{0em}{2em}
+
+% Точки после названия глав
+\renewcommand{\cftchapdotsep}{\cftdotsep}
+
+% Создание содержания
+\newcommand{\maketableofcontents}
+{
+	\renewcommand\contentsname{\large\centering{Содержание}}
+	\tableofcontents
+}
+
+% Команда создания главы без номера (введения и т.д.)
+\newcommand{\chapterwithoutnumber}[1]{
+	\chapter*{\raggedright #1}
+	\addcontentsline{toc}{chapter}{#1}
+}

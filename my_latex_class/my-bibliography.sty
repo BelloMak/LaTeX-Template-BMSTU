@@ -1,0 +1,22 @@
+% Настройка библиографии
+\RequirePackage[
+	style=gost-numeric,
+	language=auto,
+	autolang=other,
+	sorting=none,
+]{biblatex}
+\RequirePackage{csquotes}
+	\DeclareFieldFormat{urldate}{(дата
+	обращения:\addspace\thefield{urlday}\adddot
+	\thefield{urlmonth}\adddot\thefield{urlyear})}
+
+% Для запоминания количества листингов
+\newcounter{lstlistingbib}
+
+% Создание списка литерартуры
+\newcommand{\makebibliography}
+{	
+	\setcounter{lstlistingbib}{\value{lstlisting}}
+	\printbibliography[heading=bibintoc,title={Список использованных источников}]
+	\label{LastMainPage}
+}

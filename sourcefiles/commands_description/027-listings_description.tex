@@ -1,0 +1,53 @@
+\section{Листинги}
+
+В настоящем параграфе приведены примеры создания листингов. Для этого
+предлагается использовать пакет \lstinline$listings$, название которого написано
+как вставка кода в строку с использованием команды
+\lstinline:\lstinline$listings$:. 
+
+Вообще говоря, следует избегать вставки кода прямо в текст, так как это может
+вызвать так называемые \lstinline: bad boxes : --- ситуации, когда \LaTeX{} не
+может нормально распределить текст и он заезжает за пределы полей или
+растягивается. Но в рамках настоящего документа эта рекомендация была опущена
+(что вызвало порядка 15 таких ситуаций, которые были индивидуально решены ручным
+способом).
+
+Для вставки кода прямо в \textit{tex} файл можно воспользоваться окружением
+\lstinline:lstlisting: с подачей необязательных параметров, как показано в блоке
+кода ниже, а результат выполнения команд представлен в
+листинге~\ref{code:hellow_world}.\\
+\lstinline$\begin{lstlisting}[language=C++,$ \\
+\lstinline$                       caption=Код програмы <<Hello World>>,$ \\
+\lstinline$                       label=code:hellow_world]$ \\
+\lstinline$#include <iostream>$ \\
+\lstinline$ $ \\
+\lstinline$int main() {$ \\
+\lstinline$    std::cout << "Hello World!";$ \\
+\lstinline$    return 0;$ \\
+\lstinline$}$ \\
+\lstinline$\end{lstlisting}$
+
+\begin{lstlisting}[language=C++,caption=Код програмы <<Hello World>>,label=code:hellow_world]
+#include <iostream>
+	
+int main() {
+	std::cout << "Hello World!";
+	return 0;
+	}
+\end{lstlisting}
+
+Кроме того, листинг можно добавить из файла с помощью команды
+\lstinline:\includelistingfile{path/to/file}{language}{caption}{label}:. 
+
+\newpage
+Листинг~\ref{code:example.py} сделан с помощью команды \\
+\lstinline$\includelistingfile{listings/example.py}$ \\
+\lstinline$                       {Python}$ \\
+\lstinline$                       {Код программы <<example.py>>}$ \\
+\lstinline$                       {code:example.py}$
+
+\includelistingfile{listings/example.py}{Python}{Код программы <<example.py>>}{code:example.py}
+
+При необходимости отключить цветной текст в листингах и во всем документе
+(например, для успешной проверки программой TestVKR) необходимо в качестве
+параметра класса указать \lstinline$monochrome$.

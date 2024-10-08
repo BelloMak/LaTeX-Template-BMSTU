@@ -1,0 +1,15 @@
+\section{Преамбула}
+
+Для создания документа первым делом необходимо подключить к нему \LaTeX класс. В
+самом простом случае сделать это можно с помощью команды
+
+\lstinline:\documentclass{./tex_kamaz_class/tex-kamaz-class}:
+
+Для возможности изменения параметров класса из \textit{Makefile} необходимо
+использовать следующую конструкцию:\\
+\lstinline$\providecommand\classopts{}$\\
+\lstinline$\expandafter\documentclass\expandafter[\classopts]$\\
+\lstinline$                                          {./tex_kamaz_class/tex-kamaz-class}$
+
+Стоит отметить, что данную конструкцию не надо изменять при работе через GUI
+MikTex или любое иное.

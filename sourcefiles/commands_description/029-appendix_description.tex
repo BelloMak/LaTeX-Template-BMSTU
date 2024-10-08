@@ -1,0 +1,29 @@
+\section{Приложения}
+
+Для создания приложений используется окружение \lstinline:appendices:, в котором
+команда \lstinline:\chapter{Название}: создает новое приложение. 
+Для создания ссылки на приложение внутрь него необходимо поместить метку. Пример
+создания простого приложения приведен в листинге~\ref{code:appendix}.
+
+\begin{lstlisting}[language=TeX,
+    caption=Создание приложения,
+    label=code:appendix]
+% Окружение для создания приложений
+\begin{appendices}
+    
+    % Приложение A
+    \chapter{}
+    % Метка приложения А
+    \label{appendix:first}
+
+    Это приложение.
+
+    % Приложение Б
+    \chapter{}
+    % Метка приложения Б
+    \label{appendix:second}
+
+    Это второе приложение.
+
+\end{appendices}
+\end{lstlisting}
