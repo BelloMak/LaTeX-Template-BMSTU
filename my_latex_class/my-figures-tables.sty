@@ -17,6 +17,11 @@
 \captionsetup[figure]{justification=centering}
 \captionsetup[table]{justification=raggedright}
 
+% Сквозная нумерация рисунков и таблиц
+\RequirePackage{chngcntr}
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+
 % Добавление нового вида столбца
 \RequirePackage{array}
 \newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}

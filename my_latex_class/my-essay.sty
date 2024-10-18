@@ -5,7 +5,6 @@
 \RequirePackage{etoolbox}
 \newcounter{totfigures}
 \newcounter{tottables}
-\newcounter{totlistings}
 
 \providecommand\totfigbib{}
 \providecommand\tottabbib{}
@@ -20,8 +19,9 @@
 }
 \makeatother
 
-\pretocmd{\chapter}{\addtocounter{totfigures}{\value{figure}}\setcounter{figure}{0}}{}{}
-\pretocmd{\chapter}{\addtocounter{tottables}{\value{table}}\setcounter{table}{0}}{}{}
+% Метод подсчета количества рисунков и таблиц при несквозной нумерации
+%\pretocmd{\chapter}{\addtocounter{totfigures}{\value{figure}}\setcounter{figure}{0}}{}{}
+%\pretocmd{\chapter}{\addtocounter{tottables}{\value{table}}\setcounter{table}{0}}{}{}
 
 % Подсчет количества использованных источников
 \newcounter{totbibentries}
