@@ -71,9 +71,14 @@
 % Подключение математических пакетов
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
+\RequirePackage{icomma}
+
+% Сквозная нумерация формул
+\RequirePackage{chngcntr}
+\counterwithout{equation}{chapter}
 
 % Подключение пакета гиперссылок
-\RequirePackage[unicode,hidelinks]{hyperref}
+\RequirePackage[unicode,hidelinks,final]{hyperref}
 
 % Подключение пакета многострочных комментрариев
 \RequirePackage{comment}
@@ -81,6 +86,7 @@
 % Кликабельные интернет-ссылки
 \RequirePackage{url}
 
+% Колонки в тексте
 \RequirePackage{multicol}
 
 % Вставка страниц из PDF документов
