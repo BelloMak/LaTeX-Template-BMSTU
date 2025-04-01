@@ -17,17 +17,26 @@
 \cftsetindents{subsection}{0em}{3em}
 
 % Точки после названия глав
-\renewcommand{\cftchapdotsep}{\cftdotsep}
+\renewcommand{\cftchapfont}{\normalfont}
+\renewcommand{\cftchappagefont}{\normalfont}
+\renewcommand{\cftdotsep}{1}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftsecdotsep}}
 
 % Создание содержания
 \newcommand{\maketableofcontents}
 {
-	\renewcommand\contentsname{\large\centering{Содержание}}
+  {\parindent0pt
+	\renewcommand\contentsname{\large\centering{СОДЕРЖАНИЕ}}
 	\tableofcontents
+  }
 }
+
+% Команда создания главы без номера по центру
+\newcommand{\cchapter}[1]{{\parindent0pt
+          \chapter*{\hfill{\centering #1}\hfill}}}
 
 % Команда создания главы без номера (введения и т.д.)
 \newcommand{\chapterwithoutnumber}[1]{
-	\chapter*{\raggedright #1}
+	\cchapter{#1}
 	\addcontentsline{toc}{chapter}{#1}
 }

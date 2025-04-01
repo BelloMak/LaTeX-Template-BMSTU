@@ -1,5 +1,8 @@
 # My BMSTU LaTeX class
 
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![TestVKR build shield](https://img.shields.io/badge/TestVKR-build%20227-success)](http://mt5.bmstu.ru/vkr/TestVkr.exe)
+
 - [My BMSTU LaTeX class](#my-bmstu-latex-class)
   - [Общее описание](#общее-описание)
   - [Требования к ПО](#требования-к-по)

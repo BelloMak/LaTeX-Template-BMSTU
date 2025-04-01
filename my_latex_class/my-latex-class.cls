@@ -23,7 +23,7 @@
 % Настройка полей
 \RequirePackage[
 	left=30mm,
-	right=10mm,
+	right=15mm,
 	top=20mm,
 	bottom=20mm,
 ]{geometry}
@@ -118,6 +118,8 @@
 \RequirePackage{enumitem}
 \setlist[itemize]{labelsep=0.3cm,labelwidth=0.3cm,leftmargin=1.85cm}
 \setlist[enumerate]{labelsep=0.3cm,labelwidth=0.3cm,leftmargin=1.85cm}
+\renewcommand{\arraystretch}{1.2}
+\setlist{itemsep=0pt,parsep=0pt}
 
 % Дерево директории
 \RequirePackage{dirtree}

@@ -13,12 +13,20 @@
 % Для запоминания количества листингов
 \newcounter{lstlistingbib}
 
+% Задание нового заголовка, определяющего правила вставки библиографии
+\defbibheading{bibliography}[\bibname]{
+  	{\parindent0pt
+  		\chapter*{\hfill{\centering #1}\hfill}
+	}
+  	\addcontentsline{toc}{chapter}{#1}
+  	\markboth{#1}{#1}}
+
 % Создание списка литерартуры
 \newcommand{\makebibliography}
 {	
 	\setcounter{totfigures}{\value{figure}}	
 	\setcounter{tottables}{\value{table}}
 	\setcounter{lstlistingbib}{\value{lstlisting}}
-	\printbibliography[heading=bibintoc,title={Список использованных источников}]
+	\printbibliography[heading=bibliography,title={СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}]
 	\label{LastMainPage}
 }

@@ -7,15 +7,20 @@
 
 \RequirePackage{chngcntr}
 
+%\ifnum\value{appendixchapters}<2 ПРИЛОЖЕНИЯ \newline\vspace*{20pt}\fi
+
 % Создание приложений
 \let\oldappendices\appendices
 \let\oldendappendices\endappendices
+\let\oldclearpage\clearpage
 \renewenvironment{appendices}
 {	
-	\titleformat{\chapter}{\large\bfseries}{\appendixname~\thechapter}{0pt}{\centering\large\bfseries\\}
+	\titleformat{\chapter}{\large\bfseries}{
+		\appendixname~\thechapter
+	}{0pt}{\centering\large\bfseries\\}
 	\setcounter{appendixchapters}{0}
 	\oldappendices
-	\renewcommand{\thechapter}{\Asbuk{chapter}}
+	\renewcommand{\thechapter}{\Alph{chapter}}
 	
 	\counterwithin{figure}{chapter}
 	\counterwithin{table}{chapter}
