@@ -46,9 +46,14 @@
 % \total{appendixchapters}
 
 % Сравнение счетроки с нулем
-\newcommand{\checkcounter}[2]{
-	\ifthenelse{\equal{#1}{\string 0}}{}{, #1~#2}
+\newcommand\checkcounter[2]{%
+	\ifthenelse{\equal{#1}{\string 0}}{}{, #1~#2}%
 }
+
+% Удаление пробелов между словами
+\makeatletter
+\def\removespaces#1{\zap@space#1 \@empty}
+\makeatother
 
 % Создание страницы реферата без приложений
 \newenvironment{essay}
@@ -57,8 +62,11 @@
 	\addcontentsline{toc}{chapter}{РЕФЕРАТ}
 	
 	% Строчка ниже будет напечатана сразу после команды \begin{essay}
-	Расчетно-пояснительная записка \begin{NoHyper}\pageref{LastMainPage}\end{NoHyper}~с.
-	{\kern-1ex}\checkcounter{\totfigbib}{рис.}{\kern-1ex}\checkcounter{\tottabbib}{табл.}{\kern-1ex}\checkcounter{\totlistbib}{лист.}{\kern-1ex}\checkcounter{\thetotbibentries}{источн.}
+	Расчетно-пояснительная записка \removespaces{\begin{NoHyper}\pageref{LastMainPage}\end{NoHyper}~с.
+	\checkcounter{\totfigbib}{рис.}
+	\checkcounter{\tottabbib}{табл.}
+	\checkcounter{\totlistbib}{лист.}
+	\checkcounter{\thetotbibentries}{источн.}}
 	\par
 }{}
 
@@ -69,7 +77,11 @@
 	\addcontentsline{toc}{chapter}{РЕФЕРАТ}
 	
 	% Строчка ниже будет напечатана сразу после команды \begin{essay}
-	Расчетно-пояснительная записка \begin{NoHyper}\pageref{LastMainPage}\end{NoHyper}~с.
-	{\kern-1ex}\checkcounter{\totfigbib}{рис.}{\kern-1ex}\checkcounter{\tottabbib}{табл.}{\kern-1ex}\checkcounter{\totlistbib}{лист.}{\kern-1ex}\checkcounter{\thetotbibentries}{источн.}{\kern-3pt}, \total{appendixchapters}~прил.
+	Расчетно-пояснительная записка \removespaces{\begin{NoHyper}\pageref{LastMainPage}\end{NoHyper}~с.
+	\checkcounter{\totfigbib}{рис.}
+	\checkcounter{\tottabbib}{табл.}
+	\checkcounter{\totlistbib}{лист.}
+	\checkcounter{\thetotbibentries}{источн.},} 
+	\total{appendixchapters}~прил.
 	\par
 }{}

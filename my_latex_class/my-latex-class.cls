@@ -29,7 +29,7 @@
 ]{geometry}
 
 % Настройка переносов
-\RequirePackage{microtype}
+%\RequirePackage{microtype}
 \sloppy
 
 % Настройка межстрочного интервала
@@ -80,7 +80,7 @@
 % Подключение пакета гиперссылок
 \RequirePackage[unicode,hidelinks,final]{hyperref}
 
-% Подключение пакета многострочных комментрариев
+% Подключение пакета многострочных комментариев
 \RequirePackage{comment}
 
 % Кликабельные интернет-ссылки
@@ -116,8 +116,8 @@
 
 % Отступы в списках
 \RequirePackage{enumitem}
-\setlist[itemize]{labelsep=0.3cm,labelwidth=0.3cm,leftmargin=1.85cm}
-\setlist[enumerate]{labelsep=0.3cm,labelwidth=0.3cm,leftmargin=1.85cm}
+\setlist[itemize]{labelsep=0.3cm,labelwidth=0.3cm,itemindent=0.6cm,leftmargin=1.25cm}
+\setlist[enumerate]{labelsep=0.3cm,labelwidth=0.3cm,itemindent=0.6cm,leftmargin=1.25cm}
 \renewcommand{\arraystretch}{1.2}
 \setlist{itemsep=0pt,parsep=0pt}
 
