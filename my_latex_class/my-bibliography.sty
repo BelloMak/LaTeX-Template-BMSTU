@@ -24,9 +24,11 @@
 % Создание списка литерартуры
 \newcommand{\makebibliography}
 {	
+	\hbadness=11000
 	\setcounter{totfigures}{\value{figure}}	
 	\setcounter{tottables}{\value{table}}
 	\setcounter{lstlistingbib}{\value{lstlisting}}
 	\printbibliography[heading=bibliography,title={СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}]
 	\label{LastMainPage}
+	\hbadness=10000
 }
