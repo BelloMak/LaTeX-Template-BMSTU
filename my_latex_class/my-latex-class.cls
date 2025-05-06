@@ -28,8 +28,12 @@
 	bottom=20mm,
 ]{geometry}
 
+% Выравнивание по ширине
+\RequirePackage{ragged2e}
+\justifying 
+
 % Настройка переносов
-%\RequirePackage{microtype}
+% \RequirePackage{microtype}
 \sloppy
 
 % Настройка межстрочного интервала
@@ -72,6 +76,8 @@
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
 \RequirePackage{icomma}
+\RequirePackage{mathtools}
+\allowdisplaybreaks
 
 % Сквозная нумерация формул
 \RequirePackage{chngcntr}
