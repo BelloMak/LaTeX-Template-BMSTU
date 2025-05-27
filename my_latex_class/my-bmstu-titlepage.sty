@@ -30,8 +30,8 @@
 }
 \makeatother
 
-% Создание шапки титульной страницы
-\newcommand{\titlepageheader}[2]
+% Создание шапки титульной страницы с гербом
+\newcommand{\titlepageheaderwithemblem}[2]
 {
 	\begin{wrapfigure}[7]{l}{0.14\linewidth}
 		\vspace{3.4mm}
@@ -55,9 +55,30 @@
 	\vspace{2.8mm}
 	{
 		\small
-		ФАКУЛЬТЕТ \longunderline{<<#1>>} \\
+		ФАКУЛЬТЕТ \longunderline{#1} \\
 		\vspace{3.3mm}
-		КАФЕДРА \ \ \ \ \longunderline{<<#2>>} \\
+		КАФЕДРА \ \ \ \ \longunderline{#2} \\
+	}
+}
+
+% Создание шапки титульной страницы без герба
+\newcommand{\titlepageheader}[2]
+{
+	{
+		\singlespacing \footnotesize \bfseries
+		Министерство науки и высшего образования Российской Федерации \\\vspace{0.7em}
+		Федеральное государственное автономное образовательное учреждение высшего образования \\\vspace{-0.5em}
+		<<Московский государственный технический университет имени Н.~Э.~Баумана \\\vspace{-0.5em}
+		(национальный исследовательский университет)>> \\\vspace{-0.5em}
+		(МГТУ им. Н.~Э.~Баумана) \\}
+	\vspace{-3mm}
+	\vhrulefill{0.6mm} \\
+	\vspace{2.8mm}
+	{
+		\small
+		ФАКУЛЬТЕТ \longunderline{#1} \\
+		\vspace{3mm}
+		КАФЕДРА \ \ \ \ \longunderline{#2} \\
 	}
 }
 
@@ -70,10 +91,14 @@
 	}
 	\vspace{5mm}
 	{
-		\Large \itshape
+		\Large \itshape \bfseries
 		К НАУЧНО-ИССЛЕДОВАТЕЛЬСКОЙ РАБОТЕ \\
 		\vspace{5mm}
 		НА ТЕМУ: \\
+	}
+	\vspace{8mm}
+	{
+		\Large \itshape
 		<<#1>>
 	}
 }
@@ -87,10 +112,14 @@
 	}
 	\vspace{5mm}
 	{
-		\Large \itshape
+		\Large \itshape \bfseries
 		#1 \\
 		\vspace{5mm}
 		НА ТЕМУ: \\
+	}
+	\vspace{8mm}
+	{
+		\Large \itshape
 		<<#2>>
 	}
 }
@@ -115,11 +144,11 @@
 	\foreach \s/\g in {#1} {
 		\gappto\titlepagestudentscontent{Студент \fixunderline}
 		\xappto\titlepagestudentscontent{{\g}}
-		\gappto\titlepagestudentscontent{{25mm}{(Группа)} &}
-		\gappto\titlepagestudentscontent{\fixunderline{}{38mm}{(Подпись, дата)} \vspace{1.3mm} &}
+		\gappto\titlepagestudentscontent{{25mm}{(группа)} &}
+		\gappto\titlepagestudentscontent{\fixunderline{}{38mm}{(подпись)} \vspace{1.3mm} &}
 		\gappto\titlepagestudentscontent{\fixunderline}
 		\xappto\titlepagestudentscontent{{\s}}
-		\gappto\titlepagestudentscontent{{38mm}{(И.~О.~Фамилия)} \\}
+		\gappto\titlepagestudentscontent{{38mm}{(инициалы,~фамилия)} \\}
 	}
 }
 
@@ -130,10 +159,10 @@
 {
 	\foreach \c in {#2} {
 		\gappto\titlepagestudentscontent{#1 &}
-		\gappto\titlepagestudentscontent{\fixunderline{}{38mm}{(Подпись, дата)} \vspace{1.3mm} &}
+		\gappto\titlepagestudentscontent{\fixunderline{}{38mm}{(подпись)} \vspace{1.3mm} &}
 		\gappto\titlepagestudentscontent{\fixunderline}
 		\xappto\titlepagestudentscontent{{\c}}
-		\gappto\titlepagestudentscontent{{38mm}{(И.~О.~Фамилия)} \\}
+		\gappto\titlepagestudentscontent{{38mm}{(инициалы,~фамилия)} \\}
 	}
 }
 

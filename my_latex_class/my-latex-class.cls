@@ -46,8 +46,8 @@
 
 % Настройка заголовков
 \makeatletter
-\renewcommand\LARGE{\@setfontsize\LARGE{22pt}{18}}
-\renewcommand\Large{\@setfontsize\Large{20pt}{18}}
+\renewcommand\LARGE{\@setfontsize\LARGE{20pt}{18}}
+\renewcommand\Large{\@setfontsize\Large{18pt}{18}}
 \renewcommand\large{\@setfontsize\large{16pt}{18}}
 \renewcommand\small{\@setfontsize\small{12pt}{18}}
 \renewcommand\footnotesize{\@setfontsize\footnotesize{10pt}{18}}
@@ -124,8 +124,7 @@
 \RequirePackage{enumitem}
 \setlist[itemize]{labelsep=0.3cm,labelwidth=0.3cm,itemindent=0.6cm,leftmargin=1.25cm}
 \setlist[enumerate]{labelsep=0.3cm,labelwidth=0.3cm,itemindent=0.6cm,leftmargin=1.25cm}
-\renewcommand{\arraystretch}{1.2}
-\setlist{itemsep=0pt,parsep=0pt}
+\setlist{topsep=0.4em,itemsep=0pt,parsep=0pt,partopsep=0pt}
 
 % Дерево директории
 \RequirePackage{dirtree}

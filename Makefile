@@ -56,7 +56,7 @@ FASTDRAFTPARAM = -halt-on-error -file-line-error -interaction=nonstopmode \
 -jobname=$(FASTDRAFT_FILE_NAME) "\def\classopts{draft}\input{$(TEX_SOURCE).tex}"
 
 # grep params for parse xelatex errors
-GREPPARAM_TEX = -m 1 -A 1 -E "[.]tex:[0-9]+:|^!|WARN"
+GREPPARAM_TEX = -m 1 -A 1 -E "[.]tex:[0-9]+:|^!|WARN|Package fontspec Error:"
 # grep params for parse biber errors
 GREPPARAM_BIBER_WARN = -E " WARN "
 # grep params for parse biber warnings
